@@ -11,9 +11,6 @@ class MsgManager(object):
 
     def logincallback(self):
         # 初始化信息
-        friends = itchat.get_friends()
-        for friend in friends:
-            print(friend)
         pass
 
     @itchat.msg_register(INCOME_MSG)
@@ -91,4 +88,6 @@ class MsgManager(object):
                     friend.send("%s , 儿童节快乐！！！ " % friend.RemarkName)
 
     def startWeChat(self):
-        itchat.login(loginCallback=self.logincallback)
+        # itchat.login(loginCallback=self.logincallback)
+        itchat.auto_login(enableCmdQR=True, loginCallback=self.logincallback())
+        itchat.run()
