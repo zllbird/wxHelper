@@ -1,9 +1,3 @@
 from .core import MsgManager
 
-def new_instance():
-    newInstance = MsgManager()
-    return newInstance
-
-instance = new_instance()
-
-run = instance.startWeChat()
+from .mongohelper import save_text, save_image, find_image_to_friend, find_text_to_friend
